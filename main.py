@@ -7,14 +7,12 @@ shift = int(input("Type the shift number:\n"))
 
 
 # Main function
-def encrypt(text, shift):
-    shifted_index = []
-    for char in text:
-        shifted_index.append(alphabet.index(char) + shift)
+def encrypt(plain_text, shift_amount):
     cipher_text = ""
-    for element in shifted_index:
-        cipher_text = cipher_text + alphabet[element]
-
+    for letter in plain_text:
+        position = alphabet.index(letter)
+        shifted_position = position + shift_amount
+        cipher_text += alphabet[shifted_position]
     print(f"The encoded text is {cipher_text}")
 
 
