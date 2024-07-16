@@ -33,3 +33,8 @@ if direction == "encode":
     encrypt(text, shift)
 else:
     decrypt(text, shift)
+
+# TODO-1: Combine the encrypt() and decrypt() functions into a single
+# function called caesar().
+# TODO-2: Call the caesar() function, passing over the 'text', 'shift'
+# and 'direction' values.
