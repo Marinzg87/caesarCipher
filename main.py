@@ -4,8 +4,8 @@ alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm',
             'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
 
 print(logo)
-work = "yes"
-while work == "yes":
+should_continue = True
+while should_continue:
     direction = input("Type 'encode' to encrypt, type 'decode' to decrypt:\n")
     text = input("Type your message:\n").lower()
     shift = int(input("Type the shift number [from 1 to 25]:\n"))
@@ -33,4 +33,6 @@ while work == "yes":
 
 
     caesar(start_text=text, shift_amount=shift, cipher_direction=direction)
-    work = input("Type 'yes' if you want to go again. Otherwise type 'no'.\n")
+    result = input("Type 'yes' if you want to go again. Otherwise type 'no'.\n")
+    if result == "no":
+        should_continue = False
