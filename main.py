@@ -1,10 +1,14 @@
+from art import logo
+
 alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm',
             'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
 
+print(logo)
 direction = input("Type 'encode' to encrypt, type 'decode' to decrypt:\n")
 text = input("Type your message:\n").lower()
-shift = int(input("Type the shift number:\n"))
-
+shift = int(input("Type the shift number [from 1 to 25]:\n"))
+while shift > 25:
+    shift = int(input("Type the shift number [from 1 to 25]:\n"))
 
 def caesar(start_text, shift_amount, cipher_direction):
     end_text = ""
@@ -24,13 +28,6 @@ def caesar(start_text, shift_amount, cipher_direction):
 
 
 caesar(start_text=text, shift_amount=shift, cipher_direction=direction)
-
-#TODO-1: Import and print the logo from art.py when the program starts.
-
-#TODO-2: What if the user enters a shift that is greater than the number of letters in the alphabet?
-#Try running the program and entering a shift number of 45.
-#Add some code so that the program continues to work even if the user enters a shift number greater than 26.
-#Hint: Think about how you can use the modulus (%).
 
 #TODO-3: What happens if the user enters a number/symbol/space?
 #Can you fix the code to keep the number/symbol/space when the text is encoded/decoded?
